@@ -27,9 +27,7 @@ export default defineConfig({
         '**/coverage/**',
         '**/pages', // Pages are going to be tested using cypress
       ],
-      include: [
-        '**/*.{js,jsx,ts,tsx}',
-      ],
+      include: ['**/*.{js,jsx,ts,tsx}'],
     },
   },
 
