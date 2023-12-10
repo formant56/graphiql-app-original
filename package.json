@@ -7,7 +7,8 @@
     "npm": "9"
   },
   "scripts": {
-    "check:ci": "npm run format:check && npm run lint && npm run build",
+    "precommit": "npm run format:check && npm run lint && npm run build",
+    "predeploy": "npm run precommit && npm run e2e:test:coverage",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
@@ -15,7 +16,7 @@
     "prepare": "husky install",
     "format:fix": "prettier --ignore-path ./.prettierignore --write .",
     "format:check": "prettier --ignore-path ./.prettierignore --check .",
-    "test:coverage": "npm run e2e:headless && npx nyc report --check-coverage --statements 80",
+    "e2e:test:coverage": "npm run e2e:headless && npx nyc report --check-coverage --statements 80",
     "e2e": "start-server-and-test dev http://localhost:3000 \"cypress open --e2e\"",
     "e2e:headless": "start-server-and-test dev http://localhost:3000 \"cypress run --e2e\"",
     "component": "cypress open --component",
