@@ -47,6 +47,7 @@ export const HomePageContent: NextPage = function () {
           </div>
           <div className="flex flex-shrink-0 items-center">
             <Button.Group>
+              {/* @ts-expect-error Link doesn't have as property */}
               <Button
                 data-testid="welcome-signin-btn"
                 as={Link}
@@ -54,6 +55,7 @@ export const HomePageContent: NextPage = function () {
               >
                 Sign In
               </Button>
+              {/* @ts-expect-error Link doesn't have as property */}
               <Button
                 data-testid="welcome-signup-btn"
                 as={Link}
