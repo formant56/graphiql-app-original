@@ -3,10 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "engines": {
-    "node": "18.18.2",
-    "npm": "9.8.1"
+    "node": "18",
+    "npm": "9"
   },
   "scripts": {
+    "check:ci": "npm run format:check && npm run lint && npm run build",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
