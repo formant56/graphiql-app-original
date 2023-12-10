@@ -4,7 +4,10 @@ import Image from 'next/image';
 import Link from 'next/link';
 export const HomePageContent: NextPage = function () {
   return (
-    <div className="flex justify-center relative h-full w-full overflow-y-auto m-10 pb:12 mx-auto">
+    <div
+      data-testid="welcome-banner"
+      className="flex justify-center relative h-full w-full overflow-y-auto m-10 pb:12 mx-auto"
+    >
       <Banner>
         <div className="flex w-[calc(100%-2rem)] flex-col justify-between rounded-lg border border-gray-100 bg-white p-4 shadow-sm dark:border-gray-600 dark:bg-gray-700 md:flex-row lg:max-w-7xl">
           <div className="mb-3 mr-4 flex flex-col items-start md:mb-0 md:flex-row md:items-center">
@@ -44,10 +47,18 @@ export const HomePageContent: NextPage = function () {
           </div>
           <div className="flex flex-shrink-0 items-center">
             <Button.Group>
-              <Button as={Link} href="/login?signup=0">
+              <Button
+                data-testid="welcome-signin-btn"
+                as={Link}
+                href="/login?signup=0"
+              >
                 Sign In
               </Button>
-              <Button as={Link} href="/login?signup=1">
+              <Button
+                data-testid="welcome-signup-btn"
+                as={Link}
+                href="/login?signup=1"
+              >
                 Sign up
               </Button>
             </Button.Group>

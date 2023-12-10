@@ -1,7 +1,10 @@
 import Link from 'next/link';
 const NotFoundPage = () => {
   return (
-    <div className="text-center bg-gray-50 my-10 dark:bg-gray-900">
+    <div
+      className="text-center bg-gray-50 my-10 dark:bg-gray-900"
+      data-testid="server-error-page"
+    >
       <h1 className="text-4xl font-bold text-red-500 mb-4">500</h1>
       <p className="text-lg text-gray-600">Oops! Something went wrong.</p>
       <p className="text-gray-500 mt-2">

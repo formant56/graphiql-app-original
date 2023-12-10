@@ -18,7 +18,7 @@
 ## Checklist
 
 - [ ] I have tested my changes locally.
-- [ ] I have covered my changes with unit-tests.
+- [ ] I have covered my changes with tests.
 - [ ] I have added necessary documentation.
 - [ ] My code follows the project's coding guidelines.
 
