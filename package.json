@@ -24,7 +24,9 @@
     "flowbite-react": "^0.7.0",
     "next": "14.0.4",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "react-hook-form": "^7.49.0",
+    "yup": "^1.3.2"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^6.1.5",
