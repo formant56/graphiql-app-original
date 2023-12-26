@@ -18,13 +18,14 @@ describe('Welcome Page', () => {
     cy.giql('footer-rs-school').should('be.visible');
     cy.giql('footer-github-names').should('be.visible');
 
+    // Check secondary header existance after scroll
+
     // Navigate to Sign In Page and authenticate
     cy.giql('nav-signin-btn').click();
 
     cy.giql('login-signin-form').should('be.visible');
 
     cy.giql('login-email').type('jane.doe@example.com');
-
     cy.giql('login-password').type('topsecret');
 
     cy.giql('login-submit-btn').click();
@@ -47,5 +48,14 @@ describe('Welcome Page', () => {
     // and assert the same login page is shown
     cy.giql('welcome-signin-btn').click();
     cy.giql('login-signin-form').should('be.visible');
+  });
+
+  it('Navigation is working', () => {
+    // Start from the index page
+    cy.visit('http://localhost:3000/');
+
+    // Scroll for sticky header to appear
+    cy.scrollTo(0, 400);
+    cy.giql('nav-background').should('be.visible');
   });
 });
