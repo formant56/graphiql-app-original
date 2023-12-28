@@ -1,7 +1,22 @@
 import { defineConfig } from 'cypress';
+import dotenv from 'dotenv';
+
+dotenv.config({
+  path: `.env`,
+});
+dotenv.config({
+  path: `.env.local`,
+  override: true,
+});
 
 export default defineConfig({
+  env: {
+    codeCoverage: {
+      exclude: ['cypress/**/*.*', 'node_modules/**'],
+    },
+  },
   e2e: {
+    video: true,
     baseUrl: 'http://localhost:3000',
     setupNodeEvents(on, config) {
       require('@cypress/code-coverage/task')(on, config);
@@ -12,13 +27,11 @@ export default defineConfig({
       return config;
     },
     env: {
-      codeCoverage: {
-        // I exclude the './src/components/ui' since its UI kit.
-        exclude: ['cypress/**/*.*', 'node_modules/**', 'src/components/ui'],
-      },
+      TEST_USER_EMAIL: process.env.TEST_USER_EMAIL,
+      TEST_USER_PASSWORD: process.env.TEST_USER_PASSWORD,
     },
   },
-
+  defaultCommandTimeout: 30000,
   component: {
     devServer: {
       framework: 'next',

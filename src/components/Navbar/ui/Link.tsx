@@ -1,12 +1,9 @@
-import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
 
 import { ReactNode } from 'react';
 
 interface LinkProps {
   href: string;
-  currentPath: string;
   children: ReactNode;
   dataTestId?: string;
 }

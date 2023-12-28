@@ -1,11 +1,21 @@
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { Github } from 'lucide-react';
 import { Button } from './ui/button';
 import { useTheme } from 'next-themes';
 
 const RsSchoolIcon = () => {
+  const [mounted, setMounted] = useState(false);
   const { resolvedTheme } = useTheme();
   const isLight = resolvedTheme === 'light';
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) {
+    return null;
+  }
 
   return (
     <svg
